@@ -1,0 +1,23 @@
+.div--principal {
+  background-color: #f5f5f5;
+  border: 1px solid #e5e5e5;
+  border-radius: 4px;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+  margin-top: 5%;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+.card--style {
+  border: none !important;
+  background-color: transparent;
+}
+
+.btn--color {
+  background-color: rgb(40, 157, 253);
+  color: white;
+}
+
+.width--img {
+  max-width: 50%;
+}
