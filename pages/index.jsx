@@ -23,11 +23,11 @@ export default function Home() {
                   Cartagena? ¡Elige entre cientos de ofertas que tenemos para
                   ti!
                 </p>
-                <div className="mt-3 mb-3">
-                  <a href="#" class="btn btn--color me-3">
+                <div className="d-flex justify-content-center gap-3 align-items-center mt-3 mb-3">
+                  <a href="#" class="btn btn--color">
                     Iniciar sesión
                   </a>
-                  <a href="#" class="btn btn--color ms-3">
+                  <a href="#" class="btn btn--color">
                     Registrarme
                   </a>
                 </div>
