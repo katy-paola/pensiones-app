@@ -13,45 +13,33 @@ export default function Home() {
   if (status === 'unauthenticated') {
     return (
       <>
-        <div class="row align-items-center text-center div--principal">
-          <div class="col-sm-6">
-            <div class="card card--style">
-              <div class="card-body">
-                <h1 class="card-title mb-4">PensionesApp</h1>
-                <p class="card-text mb-4">
-                  ¿Eres estudiante foráneo y buscas alojamiento en la ciudad de
-                  Cartagena? ¡Elige entre cientos de ofertas que tenemos para
-                  ti!
-                </p>
-                <div className="d-flex justify-content-center gap-3 align-items-center mt-3 mb-3">
-                  <a href="#" class="btn btn--color">
-                    Iniciar sesión
-                  </a>
-                  <a href="#" class="btn btn--color">
-                    Registrarme
-                  </a>
+        <div className="parent grid-container">
+          <header>header</header>
+          <div className="div2">
+            <div className="row m-0 align-items-center">
+              <div className="col m-0">
+                <div className="d-flex flex-column div-main">
+                  <article>
+                    Ullamco sint elit laborum occaecat proident aliquip qui.
+                    Adipisicing labore eu ipsum ex voluptate consectetur qui
+                    ullamco eiusmod qui esse sint in.
+                  </article>
+                  <article>article 2</article>
+                  <article>article 3</article>
                 </div>
-                <p className="card-text mt-5">
-                  ¿Eres arrendatario y quieres publicar tu alojamiento?
-                  <br />
-                  <a href="#">Registrarme como arrendatario</a>
-                </p>
               </div>
-            </div>
-          </div>
-          <div class="col-sm-6">
-            <div class="card card--style">
-              <div class="card-body">
+              <div className="col m-0 div-img">
                 <Image
-                  className="width--img"
-                  src="/img_home.jpg"
-                  alt="..."
+                  className="image"
+                  src={'/img_home.jpg'}
+                  alt=""
                   width={600}
                   height={500}
                 />
               </div>
             </div>
           </div>
+          <div className="div3">footer</div>
         </div>
 
         {/*<h3>Landing</h3>
