@@ -11,18 +11,18 @@ datasource db {
 }
 
 model Account {
-  id                 String  @id @default(cuid())
-  userId             String
-  type               String
-  provider           String
-  providerAccountId  String
-  refresh_token      String?  @db.Text
-  access_token       String?  @db.Text
-  expires_at         Int?
-  token_type         String?
-  scope              String?
-  id_token           String?  @db.Text
-  session_state      String?
+  id                String  @id @default(cuid())
+  userId            String
+  type              String
+  provider          String
+  providerAccountId String
+  refresh_token     String? @db.Text
+  access_token      String? @db.Text
+  expires_at        Int?
+  token_type        String?
+  scope             String?
+  id_token          String? @db.Text
+  session_state     String?
 
   user User @relation(fields: [userId], references: [id], onDelete: Cascade)
 
@@ -45,6 +45,8 @@ model User {
   image         String?
   accounts      Account[]
   sessions      Session[]
+  reviews       Review[]
+  pension       Pension[]
 }
 
 model VerificationToken {
@@ -53,4 +55,52 @@ model VerificationToken {
   expires    DateTime
 
   @@unique([identifier, token])
+}
+
+// DE AQUI PARA ABAJO VAN LAS ENTIDADES
+model HomeOwner {
+  id       String    @id @default(cuid())
+  name     String
+  lastName String
+  email    String    @unique
+  password String
+  phone    String
+  address  String
+  city     String
+  state    String
+  zipCode  String
+  country  String
+  reviews  Review[]
+  pension  Pension[]
+}
+
+model Pension {
+  id          String     @id @default(cuid())
+  name        String
+  description String
+  image       String[]
+  price       Float
+  location    String
+  address     String
+  reviews     Review[]
+  amenities   String
+  services    String
+  rules       String
+  user        User       @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userId      String
+  HomeOwner   HomeOwner? @relation(fields: [homeOwnerId], references: [id])
+  homeOwnerId String?
+}
+
+model Review {
+  id          String     @id @default(cuid())
+  title       String
+  description String
+  rating      String
+  user        User       @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userId      String
+  pension     Pension    @relation(fields: [pensionId], references: [id], onDelete: Cascade)
+  pensionId   String
+  HomeOwner   HomeOwner? @relation(fields: [homeOwnerId], references: [id])
+  homeOwnerId String?
 }

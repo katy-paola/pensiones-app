@@ -40,16 +40,10 @@ export default function Home() {
             </div>
           </div>
           <div className="div3">footer</div>
+          <button onClick={() => signIn('google')}>
+            Iniciar sesión con Google
+          </button>
         </div>
-
-        {/*<h3>Landing</h3>
-        <Link href="/Login.jsx">
-          <a>Iniciar sesión</a>
-        </Link>
-        <button onClick={() => signIn('google')}>
-          Iniciar sesión con Google
-        </button>
-    im*/}
       </>
     );
   }
