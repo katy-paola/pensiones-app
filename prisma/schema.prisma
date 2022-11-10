@@ -65,9 +65,6 @@ model HomeOwner {
   id      String    @id @default(cuid())
   phone   String
   address String
-  city    String
-  state   String
-  country String
   user    User      @relation(fields: [userId], references: [id])
   userId  String    @unique
   pension Pension[]
@@ -95,8 +92,7 @@ model Pension {
   rules       String
   HomeOwner   HomeOwner? @relation(fields: [homeOwnerId], references: [id])
   homeOwnerId String?
-  students    Student?   @relation(fields: [studentId], references: [id])
-  studentId   String?
+  students    Student[]
 }
 
 model Review {
