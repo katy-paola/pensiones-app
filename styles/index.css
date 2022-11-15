@@ -1,4 +1,4 @@
-.parent {
+/*.parent {
   display: grid;
   grid-template-areas: 'header' 'main' 'footer';
   min-height: 100vh;
@@ -43,4 +43,18 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+*/
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 80px 1fr 80px;
+  min-height: 100vh;
+}
+
+header,
+main,
+aside,
+footer {
+  height: 100%;
 }

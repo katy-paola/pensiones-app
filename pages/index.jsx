@@ -1,6 +1,5 @@
 import styles from '../styles/Home.module.css';
 import { useSession, signIn, signOut } from 'next-auth/react';
-import Link from 'next/link';
 import Image from 'next/image';
 
 export default function Home() {
@@ -13,7 +12,13 @@ export default function Home() {
   if (status === 'unauthenticated') {
     return (
       <>
-        <div className="parent grid-container">
+        <div className="grid-container">
+          <header>header</header>
+          <main>main</main>
+          <aside>aside</aside>
+          <footer>footer</footer>
+        </div>
+        {/* <div className="parent grid-container">
           <header>header</header>
           <div className="div2">
             <div className="row m-0 align-items-center">
@@ -43,14 +48,17 @@ export default function Home() {
           <button onClick={() => signIn('google')}>
             Iniciar sesión con Google
           </button>
-        </div>
+        </div> */}
       </>
     );
   }
 
   return (
     <div className={styles.container}>
-      <h1>PensionesApp 🏘</h1>
+      <h1>
+        <i class="bi bi-houses"></i>
+        PensionesApp
+      </h1>
       <button onClick={() => signOut()}>Cerrar sesión</button>
       <main>
         <h2>¡Bienvenido {session.user.name}!</h2>
