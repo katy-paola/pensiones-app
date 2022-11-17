@@ -1,50 +1,10 @@
-/*.parent {
-  display: grid;
-  grid-template-areas: 'header' 'main' 'footer';
-  min-height: 100vh;
-  grid-template-rows: 80px 1fr 80px;
-}
-
-.grid-container div {
-  background-color: antiquewhite;
-  text-align: center;
-  color: rgb(27, 8, 8);
-  outline: 1px solid black;
-  height: 100%;
-}
-
-article {
-  outline: 1px solid black;
-}
-
-header {
-  grid-area: header;
-  grid-row: inherit;
-  background-color: antiquewhite;
-  text-align: center;
-  color: rgb(27, 8, 8);
-  outline: 1px solid black;
-}
-
-.div2 {
-  grid-area: main;
-  height: 100%;
-}
-
-.div3 {
-  grid-area: footer;
-}
-
-.div-main {
-  justify-content: center;
-}
-
-.div-img {
+.load {
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
-*/
+
 .grid-container {
   display: grid;
   grid-template-columns: repeat(2, 1fr);

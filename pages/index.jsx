@@ -5,7 +5,11 @@ export default function Home() {
   const { data: session, status } = useSession();
 
   if (status === 'loading') {
-    return <h3>Estoy cargando...</h3>;
+    return (
+      <picture className="load">
+        <img src="/load.gif" alt="" />
+      </picture>
+    );
   }
 
   if (status === 'unauthenticated') {
@@ -51,37 +55,6 @@ export default function Home() {
             </p>
           </footer>
         </div>
-        {/* <div className="parent grid-container">
-          <header>header</header>
-          <div className="div2">
-            <div className="row m-0 align-items-center">
-              <div className="col m-0">
-                <div className="d-flex flex-column div-main">
-                  <article>
-                    Ullamco sint elit laborum occaecat proident aliquip qui.
-                    Adipisicing labore eu ipsum ex voluptate consectetur qui
-                    ullamco eiusmod qui esse sint in.
-                  </article>
-                  <article>article 2</article>
-                  <article>article 3</article>
-                </div>
-              </div>
-              <div className="col m-0 div-img">
-                <Image
-                  className="image"
-                  src={'/img_home.jpg'}
-                  alt=""
-                  width={600}
-                  height={500}
-                />
-              </div>
-            </div>
-          </div>
-          <div className="div3">footer</div>
-          <button onClick={() => signIn('google')}>
-            Iniciar sesión con Google
-          </button>
-        </div> */}
       </>
     );
   }
