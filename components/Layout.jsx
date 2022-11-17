@@ -1,6 +1,6 @@
 import Navbar from './Navbar';
 
-const Layout = ({ children }) => {
+export const Layout = ({ children }) => {
   return (
     <>
       <Navbar />

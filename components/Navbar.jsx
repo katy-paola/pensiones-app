@@ -1,6 +1,6 @@
 import Link from 'next/link';
 
-const Navbar = () => {
+export const Navbar = () => {
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
       <div className="container-fluid">
