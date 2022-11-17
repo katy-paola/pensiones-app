@@ -1,6 +1,6 @@
 import Link from 'next/link';
 
-export const Navbar = () => {
+const Navbar = () => {
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
       <div className="container-fluid">
@@ -32,3 +32,5 @@ export const Navbar = () => {
     </nav>
   );
 };
+
+export default Navbar;

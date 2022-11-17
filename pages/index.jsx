@@ -1,5 +1,6 @@
 import styles from '../styles/Home.module.css';
 import { useSession, signOut } from 'next-auth/react';
+import Header from '../components/Header';
 
 export default function Home() {
   const { data: session, status } = useSession();
@@ -16,12 +17,7 @@ export default function Home() {
     return (
       <>
         <div className="grid-container">
-          <header>
-            <h1>
-              <i class="bi bi-houses"></i>
-              PensionesApp
-            </h1>
-          </header>
+          <Header></Header>
           <main>
             <div className="text">
               <h4>
