@@ -1,6 +1,5 @@
 import styles from '../styles/Home.module.css';
-import { useSession, signIn, signOut } from 'next-auth/react';
-import Image from 'next/image';
+import { useSession, signOut } from 'next-auth/react';
 
 export default function Home() {
   const { data: session, status } = useSession();
@@ -13,10 +12,44 @@ export default function Home() {
     return (
       <>
         <div className="grid-container">
-          <header>header</header>
-          <main>main</main>
-          <aside>aside</aside>
-          <footer>footer</footer>
+          <header>
+            <h1>
+              <i class="bi bi-houses"></i>
+              PensionesApp
+            </h1>
+          </header>
+          <main>
+            <div className="text">
+              <h4>
+                Somos tu puente para encontrar pensión en la ciudad de Cartagena
+              </h4>
+            </div>
+            <div className="buttons">
+              <button type="button" className="btn btn-sm">
+                Iniciar sesión
+              </button>
+              <button type="button" className="btn btn-sm">
+                Registrarme
+              </button>
+            </div>
+            <div className="add--text">
+              <p>
+                ¿Eres propietario y quieres publicar tus pensiones?
+                <br />
+                <a href="#">Registrarme como propietario</a>
+              </p>
+            </div>
+          </main>
+          <aside>
+            <picture>
+              <img src="/img_home.jpg" className="img-fluid" alt="" />
+            </picture>
+          </aside>
+          <footer>
+            <p>
+              Made with <i class="bi bi-heart-fill"></i> by Katy
+            </p>
+          </footer>
         </div>
         {/* <div className="parent grid-container">
           <header>header</header>
