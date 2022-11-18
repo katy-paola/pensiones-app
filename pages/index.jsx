@@ -40,7 +40,9 @@ export default function Home() {
       </h1>
       <button onClick={() => signOut()}>Cerrar sesión</button>
       <main>
-        <h2>¡Bienvenido {session.user.name}!</h2>
+        <h2>
+          ¡Bienvenido {session.user.name}! {session.user.id}
+        </h2>
       </main>
     </div>
   );

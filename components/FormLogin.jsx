@@ -38,7 +38,7 @@ const FormLogin = () => {
               </Link>
             </div>
             <div className="d-flex as--homeowner">
-              <Link href="#">
+              <Link href="/home-owner/login">
                 <a>Registrarme como propietario</a>
               </Link>
             </div>
