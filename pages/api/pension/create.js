@@ -11,8 +11,14 @@ export default async function handler(req, res) {
     amenities,
     services,
     rules,
-    homeOwnerId,
+    userId,
   } = req.body;
+
+  const homeOwner = await prisma.homeOwner.findUnique({
+    where: {
+      userId,
+    },
+  });
 
   const pension = await prisma.pension.create({
     data: {
@@ -27,7 +33,7 @@ export default async function handler(req, res) {
       rules,
       HomeOwner: {
         connect: {
-          id: homeOwnerId,
+          id: homeOwner.id,
         },
       },
     },

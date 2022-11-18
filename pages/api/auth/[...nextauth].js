@@ -18,6 +18,9 @@ export const authOptions = {
       }
       return session;
     },
+    authorized({ req, token }) {
+      if (token) return true; // If there is a token, the user is authenticated
+    },
     jwt: async ({ user, token }) => {
       if (user) {
         token.uid = user.id;
@@ -30,6 +33,8 @@ export const authOptions = {
   },
   pages: {
     newUser: '/auth/new-user',
+    signIn: '/api/auth/signin',
+    error: '/api/auth/error',
   },
 };
 

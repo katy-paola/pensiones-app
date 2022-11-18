@@ -28,7 +28,16 @@ aside {
 }
 header {
   grid-column: 1 / -1;
-  text-align: start;
+  justify-content: space-between;
+}
+
+header .div-btn-lg-sup .btn-lg-sup {
+  display: flex;
+}
+
+header .btn-lg-sup {
+  background: #386b43;
+  color: #fff;
 }
 
 main {
@@ -185,7 +194,8 @@ footer p i {
 }
 
 @media (max-width: 400px) {
-  header h1 {
+  header h1,
+  header .div-btn-lg-sup .icon-lg {
     font-size: 20px;
   }
   header h1 i {

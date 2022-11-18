@@ -35,7 +35,7 @@ export default function Home() {
       <Header></Header>
       <p>Hola, estoy autenticado</p>
       <h1>
-        <i class="bi bi-houses"></i>
+        <i className="bi bi-houses"></i>
         PensionesApp
       </h1>
       <button onClick={() => signOut()}>Cerrar sesión</button>
