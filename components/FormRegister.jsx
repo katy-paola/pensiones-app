@@ -1,4 +1,7 @@
+import { useAuthState } from '../context/authContext';
 const FormRegister = () => {
+  const { user } = useAuthState();
+
   return (
     <>
       <div className="d-flex register">
@@ -15,7 +18,14 @@ const FormRegister = () => {
                 <input type="text" placeholder="Apellido" />
               </div>
               <div className="d-flex input">
-                <input type="email" placeholder="E-mail" />
+                {user.rol === 'HOMEOWNER' ? (
+                  <input type="email" placeholder="E-mail" />
+                ) : (
+                  <input
+                    type="email"
+                    placeholder="E-mail - @unicartagena.edu.co"
+                  />
+                )}
               </div>
             </div>
             <div className="d-flex datos-2">
