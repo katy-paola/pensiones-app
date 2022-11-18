@@ -6,7 +6,7 @@ const FormLogin = () => {
         <div className="d-flex welcome">
           <h1>Bienvenido</h1>
         </div>
-        <div className="d-flex form">
+        <div className="d-flex form-login">
           <div className="d-flex principal">
             <div className="email">
               <label htmlFor="email" className="label">

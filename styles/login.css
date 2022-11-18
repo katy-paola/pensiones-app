@@ -32,7 +32,7 @@
   flex-direction: column;
 }
 
-.form {
+.form-login {
   justify-content: center;
   padding: 15px;
 }
@@ -99,7 +99,7 @@
   .login {
     margin: 50px auto;
   }
-  .form {
+  .form-login {
     flex-direction: column;
     gap: 30px;
   }

@@ -15,7 +15,7 @@ const Header = () => {
             <button className="btn-sm d-none d-md-block btn-lg-sup">
               Iniciar sesión
             </button>
-            <button className="d-md-none">
+            <button className="d-md-none div-icon-lg">
               <i class="bi bi-box-arrow-in-right icon-lg"></i>
             </button>
           </div>
