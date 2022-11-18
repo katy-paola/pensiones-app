@@ -5,7 +5,7 @@
   height: 100vh;
 }
 
-.grid-container {
+.grid-container-landing {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: 65px 1fr 65px;
@@ -155,7 +155,7 @@ footer p i {
 }
 
 @media (max-width: 565px) {
-  .grid-container {
+  .grid-container-landing {
     grid-template-columns: 1fr;
     grid-template-rows: 65px 1fr 1fr 65px;
   }

@@ -1,0 +1,95 @@
+.grid-container-login {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 65px 1fr 65px;
+  min-height: 100vh;
+}
+
+.content {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(0deg, #8cfb97 0%, #d2ffdc 100%);
+  padding: 0;
+}
+
+.login {
+  width: 50%;
+  height: auto;
+  background: #f1fff9;
+  border-radius: 10px;
+  margin: 0 auto;
+  justify-content: center;
+  padding: 15px 0;
+}
+
+.login,
+.principal,
+.adicional,
+.no--account {
+  flex-direction: column;
+}
+
+.form {
+  justify-content: center;
+  padding: 15px;
+}
+
+.welcome {
+  color: #386b43;
+  justify-content: center;
+  padding: 15px 0;
+}
+
+.welcome h1 {
+  margin: 0;
+}
+
+.principal,
+.adicional {
+  gap: 30px;
+  justify-content: center;
+  width: 100%;
+}
+
+.email,
+.password {
+  padding: 0 20px;
+}
+
+.principal .label {
+  display: block;
+}
+
+.principal .input {
+  background: #c0eac9;
+  border: none;
+  font-size: 0.8em;
+  padding: 5px;
+  width: 100%;
+}
+
+.sign--in,
+.no--account,
+.as--homeowner {
+  justify-content: center;
+  align-items: center;
+}
+
+.sign--in {
+  padding: 15px 0;
+}
+
+.sign--in .btn {
+  background: #386b43;
+  color: #fff;
+}
+
+.adicional div {
+  font-size: 0.8em;
+}
+
+.no--account p {
+  margin: 0;
+}

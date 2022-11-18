@@ -2,6 +2,7 @@ import '../styles/globals.css';
 import { SessionProvider } from 'next-auth/react';
 import 'bootstrap/dist/css/bootstrap.css';
 import '../styles/index.css';
+import '../styles/login.css';
 import { AuthContextProvider } from '../context/authContext';
 
 function MyApp({ Component, pageProps: { session, ...pageProps } }) {
