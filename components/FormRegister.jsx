@@ -1,12 +1,22 @@
 import { useAuthState } from '../context/authContext';
+import { ROL } from '../model/rol.enum';
+// import { useSession } from 'next-auth/react';
+import { useRouter } from 'next/router';
+
 const FormRegister = () => {
-  const { user } = useAuthState();
+  const { rol } = useAuthState();
+  const router = useRouter();
+  const isStudent = rol === ROL.STUDENT;
 
   return (
     <>
       <div className="d-flex register">
         <div className="title">
-          <h1>Registrarme como propietario</h1>
+          {!isStudent ? (
+            <h1>Registrarme como propietario</h1>
+          ) : (
+            <h1>Registrarme</h1>
+          )}
         </div>
         <div className="d-flex form-register">
           <div className="d-flex datos">
@@ -18,7 +28,7 @@ const FormRegister = () => {
                 <input type="text" placeholder="Apellido" />
               </div>
               <div className="d-flex input">
-                {user.rol === 'HOMEOWNER' ? (
+                {!isStudent ? (
                   <input type="email" placeholder="E-mail" />
                 ) : (
                   <input
@@ -36,12 +46,16 @@ const FormRegister = () => {
                 <input type="password" placeholder="Confirmar contraseña" />
               </div>
               <div className="d-flex input">
-                <input type="number" placeholder="Teléfono" />
+                <input type="tel" placeholder="Teléfono" />
               </div>
             </div>
           </div>
           <div className="d-flex sign--up">
-            <button type="button" className="btn btn-sm">
+            <button
+              type="button"
+              className="btn btn-sm"
+              onClick={() => router.push('/home')}
+            >
               Registrarme
             </button>
           </div>

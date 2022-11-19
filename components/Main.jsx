@@ -1,4 +1,11 @@
+import { ROL } from '../model/rol.enum';
+import { useAuthState } from '../context/authContext';
+import { useRouter } from 'next/router';
+
 const Main = () => {
+  const { setRol } = useAuthState();
+  const router = useRouter();
+
   return (
     <>
       <main>
@@ -11,7 +18,14 @@ const Main = () => {
           <button type="button" className="btn btn-sm">
             Iniciar sesión
           </button>
-          <button type="button" className="btn btn-sm">
+          <button
+            type="button"
+            className="btn btn-sm"
+            onClick={() => {
+              setRol(ROL.STUDENT);
+              router.push('/register');
+            }}
+          >
             Registrarme
           </button>
         </div>
@@ -19,7 +33,15 @@ const Main = () => {
           <p>
             ¿Eres propietario y quieres publicar tus pensiones?
             <br />
-            <a href="#">Registrarme como propietario</a>
+            <a
+              className="rg-as-homeowner"
+              onClick={() => {
+                setRol(ROL.HOMEOWNER);
+                router.push('/register');
+              }}
+            >
+              Registrarme como propietario
+            </a>
           </p>
         </div>
       </main>

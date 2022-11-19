@@ -1,0 +1,117 @@
+.grid-container-add-pension {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 65px 1fr 65px;
+  min-height: 100vh;
+}
+
+.container-add-pension {
+  width: 50%;
+  min-width: 300px;
+  height: auto;
+  background: #f1fff9;
+  border-radius: 10px;
+  margin: 0 auto;
+  justify-content: center;
+  padding: 15px 30px;
+}
+
+.container-add-pension,
+.container-add-pension .content-1,
+.container-add-pension .content-2,
+.container-add-pension .data,
+.container-add-pension .hp-vinculo {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.container-add-pension .title {
+  color: #386b43;
+  justify-content: center;
+  padding: 15px 0;
+}
+
+.container-add-pension .title h1 {
+  margin: 0;
+  font-size: 25px;
+}
+
+.content-add-pension {
+  justify-content: center;
+  width: 100%;
+  padding: 30px 0;
+  gap: 30px;
+}
+
+.content-add-pension .content-1,
+.content-add-pension .content-2 {
+  gap: 30px;
+  justify-content: center;
+  width: 100%;
+}
+
+.content-add-pension .input {
+  width: 100%;
+}
+
+.content-add-pension .input input {
+  background: #c0eac9;
+  border: none;
+  font-size: 0.8em;
+  padding: 5px;
+  width: 100%;
+}
+
+.content-add-pension .data,
+.content-add-pension .hp-vinculo {
+  justify-content: center;
+  width: 100%;
+  gap: 30px;
+}
+
+.hp-vinculo .location {
+  width: 100%;
+  justify-content: center;
+}
+
+.hp-vinculo .btn-add {
+  justify-content: center;
+}
+
+.hp-vinculo .btn-add button {
+  background: #386b43;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 0.8em;
+}
+
+.hp-vinculo .btn-add button:hover {
+  cursor: pointer;
+}
+
+@media (max-width: 940px) {
+  .container-add-pension .title h1 {
+    font-size: 20px;
+  }
+  .container-add-pension .location a {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 820px) {
+  .container-add-pension {
+    margin: 50px auto;
+  }
+  .content-add-pension {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 680px) {
+  .container-add-pension .title h1 {
+    font-size: 16px;
+  }
+}

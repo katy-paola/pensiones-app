@@ -1,0 +1,117 @@
+.grid-container-edit-pension {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 65px 1fr 65px;
+  min-height: 100vh;
+}
+
+.container-edit-pension {
+  width: 50%;
+  min-width: 300px;
+  height: auto;
+  background: #f1fff9;
+  border-radius: 10px;
+  margin: 0 auto;
+  justify-content: center;
+  padding: 15px 30px;
+}
+
+.container-edit-pension,
+.container-edit-pension .content-1,
+.container-edit-pension .content-2,
+.container-edit-pension .data,
+.container-edit-pension .hp-vinculo {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.container-edit-pension .title {
+  color: #386b43;
+  justify-content: center;
+  padding: 15px 0;
+}
+
+.container-edit-pension .title h1 {
+  margin: 0;
+  font-size: 25px;
+}
+
+.content-edit-pension {
+  justify-content: center;
+  width: 100%;
+  padding: 30px 0;
+  gap: 30px;
+}
+
+.content-edit-pension .content-1,
+.content-edit-pension .content-2 {
+  gap: 30px;
+  justify-content: center;
+  width: 100%;
+}
+
+.content-edit-pension .input {
+  width: 100%;
+}
+
+.content-edit-pension .input input {
+  background: #c0eac9;
+  border: none;
+  font-size: 0.8em;
+  padding: 5px;
+  width: 100%;
+}
+
+.content-edit-pension .data,
+.content-edit-pension .hp-vinculo {
+  justify-content: center;
+  width: 100%;
+  gap: 30px;
+}
+
+.hp-vinculo .location {
+  width: 100%;
+  justify-content: center;
+}
+
+.hp-vinculo .btn-edit {
+  justify-content: center;
+}
+
+.hp-vinculo .btn-edit button {
+  background: #386b43;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 0.8em;
+}
+
+.hp-vinculo .btn-edit button:hover {
+  cursor: pointer;
+}
+
+@media (max-width: 940px) {
+  .container-edit-pension .title h1 {
+    font-size: 20px;
+  }
+  .container-edit-pension .location a {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 820px) {
+  .container-edit-pension {
+    margin: 50px auto;
+  }
+  .content-edit-pension {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 680px) {
+  .container-edit-pension .title h1 {
+    font-size: 16px;
+  }
+}

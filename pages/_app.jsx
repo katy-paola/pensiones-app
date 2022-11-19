@@ -4,6 +4,9 @@ import 'bootstrap/dist/css/bootstrap.css';
 import '../styles/index.css';
 import '../styles/login.css';
 import '../styles/register.css';
+import '../styles/home.css';
+import '../styles/add-pension.css';
+import '../styles/edit-pension.css';
 import { AuthContextProvider } from '../context/authContext';
 
 function MyApp({ Component, pageProps: { session, ...pageProps } }) {

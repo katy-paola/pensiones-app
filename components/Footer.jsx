@@ -1,9 +1,7 @@
 const Footer = () => {
   return (
     <footer>
-      <p>
-        Made with <i className="bi bi-heart-fill"></i> by Katy
-      </p>
+      <p>Ingeniería de sistemas UdeC - 2022</p>
     </footer>
   );
 };
