@@ -6,6 +6,7 @@ import { ROL } from '../model/rol.enum';
 
 const ContainerHome = () => {
   const [pensions, setPensions] = useState([]);
+  const [filter, setFilter] = useState('');
   const { rol } = useAuthState();
   // const { data: session, status } = useSession();
 
@@ -28,6 +29,15 @@ const ContainerHome = () => {
           ) : (
             <h1>Mis pensiones</h1>
           )}
+        </div>
+
+        <div className="d-flex search">
+          <input
+            type="search"
+            placeholder="Buscar"
+            value={filter}
+            onChange={(e) => setFilter(e.target.value)}
+          />
         </div>
         {/* me falta agregarle la parte de filtrar búsqueda */}
         <div className="d-flex content-home">
@@ -54,38 +64,42 @@ const ContainerHome = () => {
                   <div className="d-flex div-pension div-info-pension">
                     <div className="info-pension">⭐⭐⭐⭐⭐</div>
                     <div className="info-pension">${pension.price}</div>
-                    <div className="info-pension">🛌 🍽 🚗</div>
+                    <div className="info-pension">🛌 🍽</div>
                   </div>
                 </div>
               ))}
             </>
           ) : (
             <>
-              {pensions.map((pension) => (
-                <div className="d-flex row-pension" key={pension.id}>
-                  <div className="d-flex div-pension">
-                    <picture className="img">
-                      <img
-                        src={pension.image[0]}
-                        alt=""
-                        className="img-hab img-fluid"
-                      />
-                    </picture>
+              {pensions
+                .filter((pension) =>
+                  pension.address.toLowerCase().includes(filter.toLowerCase())
+                )
+                .map((pension) => (
+                  <div className="d-flex row-pension" key={pension.id}>
+                    <div className="d-flex div-pension">
+                      <picture className="img">
+                        <img
+                          src={pension.image[0]}
+                          alt=""
+                          className="img-hab img-fluid"
+                        />
+                      </picture>
+                    </div>
+                    <div className="d-flex div-pension div-text-pension">
+                      <p>{pension.name}</p>
+                      <p>{pension.address}</p>
+                      <Link href={`/view-pension/${pension.id}`}>
+                        <a>Ver detalles</a>
+                      </Link>
+                    </div>
+                    <div className="d-flex div-pension div-info-pension">
+                      <div className="info-pension">⭐⭐⭐⭐⭐</div>
+                      <div className="info-pension">${pension.price}</div>
+                      <div className="info-pension">🛌 🍽</div>
+                    </div>
                   </div>
-                  <div className="d-flex div-pension div-text-pension">
-                    <p>{pension.name}</p>
-                    <p>{pension.address}</p>
-                    <Link href={`/view-pension/${pension.id}`}>
-                      <a>Ver detalles</a>
-                    </Link>
-                  </div>
-                  <div className="d-flex div-pension div-info-pension">
-                    <div className="info-pension">⭐⭐⭐⭐⭐</div>
-                    <div className="info-pension">${pension.price}</div>
-                    <div className="info-pension">🛌 🍽 🚗</div>
-                  </div>
-                </div>
-              ))}
+                ))}
             </>
           )}
           <div className="d-flex icon-map">

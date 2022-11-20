@@ -2,10 +2,17 @@ import prisma from '../../../library/prismadb';
 
 export default async function handler(req, res) {
   // Vamos a obtener todos los usuarios desde prisma
-  const students = await prisma.student.findMany({
+
+  const { id } = req.query;
+
+  const student = await prisma.student.findUnique({
+    where: {
+      userId: id,
+    },
     include: {
       favoritePensions: true,
     },
   });
-  res.status(200).json(students);
+
+  res.status(200).json(student);
 }

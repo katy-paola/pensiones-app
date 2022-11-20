@@ -17,6 +17,7 @@ const MapPension = ({ pensions }) => {
       zoom={13}
       scrollWheelZoom={false}
       minZoom={12}
+      dragging={true}
       maxBounds={[
         [10.267611, -75.578984],
         [10.537838, -75.390558],

@@ -15,7 +15,13 @@ const Main = () => {
           </h4>
         </div>
         <div className="buttons">
-          <button type="button" className="btn btn-sm">
+          <button
+            type="button"
+            className="btn btn-sm"
+            onClick={() => {
+              router.push('/login');
+            }}
+          >
             Iniciar sesión
           </button>
           <button

@@ -31,6 +31,7 @@ const SinglePension = () => {
         services={pension?.services}
         homeOwner={pension?.HomeOwner}
         location={pension?.location}
+        id={pension?.id}
       />
       <Footer></Footer>
     </div>

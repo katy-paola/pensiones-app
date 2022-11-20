@@ -1,5 +1,11 @@
 import Link from 'next/link';
+import { useRouter } from 'next/router';
+import { ROL } from '../model/rol.enum';
+import { useAuthState } from '../context/authContext';
+
 const FormLogin = () => {
+  const router = useRouter();
+  const { setRol } = useAuthState();
   return (
     <>
       <div className="d-flex login">
@@ -25,7 +31,13 @@ const FormLogin = () => {
               <input type="password" className="input" placeholder="********" />
             </div>
             <div className="d-flex sign--in">
-              <button type="button" className="btn btn-sm">
+              <button
+                type="button"
+                className="btn btn-sm"
+                onClick={() => {
+                  router.push('/home');
+                }}
+              >
                 Iniciar sesión
               </button>
             </div>
@@ -33,13 +45,25 @@ const FormLogin = () => {
           <div className="d-flex adicional">
             <div className="d-flex no--account">
               <p>¿No tienes una cuenta?</p>
-              <Link href="#">
-                <a>Regístrate</a>
+              <Link href="/register">
+                <a
+                  onClick={() => {
+                    setRol(ROL.STUDENT);
+                  }}
+                >
+                  Regístrate
+                </a>
               </Link>
             </div>
             <div className="d-flex as--homeowner">
-              <Link href="/home-owner/login">
-                <a>Registrarme como propietario</a>
+              <Link href="/register">
+                <a
+                  onClick={() => {
+                    setRol(ROL.HOMEOWNER);
+                  }}
+                >
+                  Registrarme como propietario
+                </a>
               </Link>
             </div>
           </div>

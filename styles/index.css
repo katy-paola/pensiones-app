@@ -37,6 +37,10 @@ header .pensiones-app {
   color: #386b43;
 }
 
+header .pensiones-app h1 {
+  margin: 0;
+}
+
 header .div-btn-lg-sup {
   display: flex;
 }
@@ -234,6 +238,10 @@ footer p i {
   main {
     justify-content: space-evenly;
     gap: 10px;
+  }
+  footer {
+    font-size: 14px;
+    padding: 10px 40px;
   }
 }
 

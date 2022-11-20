@@ -56,7 +56,12 @@ const Header = () => {
                 </>
               ) : (
                 <>
-                  <button className="btn-sm d-none d-md-block btn-lg-sup">
+                  <button
+                    className="btn-sm d-none d-md-block btn-lg-sup"
+                    onClick={() => {
+                      router.push('/login');
+                    }}
+                  >
                     Iniciar sesión
                   </button>
                   <button className="d-md-none div-icon-lg">
