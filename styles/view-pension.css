@@ -1,0 +1,85 @@
+.grid-container-view-pension {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 65px 1fr 65px;
+  min-height: 100vh;
+}
+
+.container-view-pension {
+  grid-template-columns: 1 / -1;
+  padding: 30px 0;
+  background: linear-gradient(0deg, #8cfb97 0%, #d2ffdc 100%);
+  min-width: 300px;
+  height: 100%;
+  align-items: center;
+}
+
+.container-view-pension .title {
+  justify-content: space-between;
+  width: 60%;
+}
+
+.container-view-pension .title .div-text {
+  margin: 0;
+  font-size: 20px;
+  color: #386b43;
+  width: 100%;
+}
+
+.container-view-pension .title .div-text h3 {
+  margin: 0;
+  vertical-align: middle;
+  width: 100%;
+}
+
+.container-view-pension .title .icons {
+  margin: 0;
+  font-size: 2rem;
+  color: #386b43;
+  justify-content: end;
+  gap: 10px;
+  width: 100%;
+}
+
+.container-view-pension .title .icons .bi-trash {
+  margin: 0;
+}
+
+.content-view-pension {
+  justify-content: space-between;
+  flex-direction: column;
+  width: 60%;
+  margin: auto;
+  gap: 20px;
+}
+
+.content-view-pension .div-content .photo img {
+  width: 100%;
+  height: 100%;
+}
+
+.content-view-pension .div-content p {
+  margin: 0;
+  font-size: 20px;
+  width: 100%;
+}
+
+.content-view-pension .div-content a {
+  font-size: 20px;
+}
+
+.content-view-pension .div-content .phone {
+  text-decoration: none;
+  background: #386b43;
+  color: #fff;
+  padding: 6px 8px;
+  border-radius: 5px;
+}
+
+.content-view-pension .rating {
+  flex-direction: column;
+}
+
+.content-view-pension .rating .label {
+  display: block;
+}

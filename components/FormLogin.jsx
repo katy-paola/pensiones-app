@@ -15,7 +15,7 @@ const FormLogin = () => {
               <input
                 type="text"
                 className="input"
-                placeholder="example@unicartagena.edu.co"
+                placeholder="email@example.com"
               />
             </div>
             <div className="password">

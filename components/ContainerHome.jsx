@@ -47,7 +47,7 @@ const ContainerHome = () => {
                   <div className="d-flex div-pension div-text-pension">
                     <p>{pension.name}</p>
                     <p>{pension.address}</p>
-                    <Link href="#">
+                    <Link href={`/view-pension/${pension.id}`}>
                       <a>Ver detalles</a>
                     </Link>
                   </div>
@@ -75,7 +75,7 @@ const ContainerHome = () => {
                   <div className="d-flex div-pension div-text-pension">
                     <p>{pension.name}</p>
                     <p>{pension.address}</p>
-                    <Link href="#">
+                    <Link href={`/view-pension/${pension.id}`}>
                       <a>Ver detalles</a>
                     </Link>
                   </div>
@@ -89,7 +89,9 @@ const ContainerHome = () => {
             </>
           )}
           <div className="d-flex icon-map">
-            <i class="bi bi-geo-alt-fill"></i>
+            <Link href="view-map">
+              <i class="bi bi-geo-alt-fill"></i>
+            </Link>
           </div>
         </div>
       </div>

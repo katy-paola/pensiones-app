@@ -23,35 +23,50 @@ const Header = () => {
             </h1>
           </a>
         </Link>
-        {isAuth && (
-          <div className="d-flex navbar">
-            <div className="menu">
-              {!isStudent && (
+        <div className="d-flex prueba">
+          {isAuth && (
+            <div className="d-flex navbar">
+              <div className="menu">
+                {!isStudent && (
+                  <div className="d-flex item">
+                    <Link href="#">
+                      <a>Agregar pensión</a>
+                    </Link>
+                  </div>
+                )}
                 <div className="d-flex item">
                   <Link href="#">
-                    <a>Agregar pensión</a>
+                    <a>Mi perfil</a>
                   </Link>
                 </div>
-              )}
-              <div className="d-flex item">
-                <Link href="#">
-                  <a>Mi perfil</a>
-                </Link>
               </div>
             </div>
-          </div>
-        )}
-        {(router.pathname === '/register' || isAuth) && (
-          // tengo que validar si muestra el botón de inicio de sesión o cerrar sesión
-          <div className="d-flex div-btn-lg-sup">
-            <button className="btn-sm d-none d-md-block btn-lg-sup">
-              Iniciar sesión
-            </button>
-            <button className="d-md-none div-icon-lg">
-              <i class="bi bi-box-arrow-in-right icon-lg"></i>
-            </button>
-          </div>
-        )}
+          )}
+          {(router.pathname === '/register' || isAuth) && (
+            // tengo que validar si muestra el botón de inicio de sesión o cerrar sesión
+            <div className="d-flex div-btn-lg-sup">
+              {isAuth ? (
+                <>
+                  <button className="btn-sm d-none d-md-block btn-lg-sup">
+                    Cerrar sesión
+                  </button>
+                  <button className="d-md-none div-icon-lg">
+                    <i class="bi bi-box-arrow-right icon-lg"></i>
+                  </button>
+                </>
+              ) : (
+                <>
+                  <button className="btn-sm d-none d-md-block btn-lg-sup">
+                    Iniciar sesión
+                  </button>
+                  <button className="d-md-none div-icon-lg">
+                    <i class="bi bi-box-arrow-in-right icon-lg"></i>
+                  </button>
+                </>
+              )}
+            </div>
+          )}
+        </div>
       </header>
     </>
   );
