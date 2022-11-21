@@ -7,10 +7,7 @@ const MapSelect = dynamic(() => import('../../components/MapSelectMarker'), {
 });
 
 function DisplayPosition({ map, refPosition }) {
-  const [position, setPosition] = useState(() => map.getCenter());
-
   const onMove = useCallback(() => {
-    setPosition(map.getCenter());
     refPosition(
       `${map.getCenter().lat.toFixed(5)}, ${map.getCenter().lng.toFixed(5)}`
     );

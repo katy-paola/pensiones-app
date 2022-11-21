@@ -5,19 +5,10 @@ export default async function handler(req, res) {
 
   const { id } = req.query;
 
-  const pension = await prisma.pension.findUnique({
+  const user = await prisma.user.findUnique({
     where: {
       id,
     },
-    include: {
-      HomeOwner: {
-        include: {
-          user: true,
-        },
-      },
-      reviews: true,
-    },
   });
-
-  res.status(200).json(pension);
+  res.status(200).json(user);
 }

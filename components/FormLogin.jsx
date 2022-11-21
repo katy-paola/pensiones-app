@@ -2,10 +2,29 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { ROL } from '../model/rol.enum';
 import { useAuthState } from '../context/authContext';
+import { useState } from 'react';
+import { signIn } from 'next-auth/react';
 
 const FormLogin = () => {
   const router = useRouter();
   const { setRol } = useAuthState();
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
+  const handleSubmit = async () => {
+    console.log('email', email);
+    console.log('password', password);
+
+    const response = await signIn('credentials', {
+      redirect: false,
+      email,
+      password,
+    });
+
+    if (response.error)
+      alert('Error al iniciar sesión, las credenciales no coinciden');
+    else router.push('/home');
+  };
   return (
     <>
       <div className="d-flex login">
@@ -22,21 +41,27 @@ const FormLogin = () => {
                 type="text"
                 className="input"
                 placeholder="email@example.com"
+                onChange={(e) => setEmail(e.target.value)}
+                value={email}
               />
             </div>
             <div className="password">
               <label htmlFor="password" className="label">
                 Contraseña:
               </label>
-              <input type="password" className="input" placeholder="********" />
+              <input
+                type="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                className="input"
+                placeholder="********"
+              />
             </div>
             <div className="d-flex sign--in">
               <button
                 type="button"
                 className="btn btn-sm"
-                onClick={() => {
-                  router.push('/home');
-                }}
+                onClick={handleSubmit}
               >
                 Iniciar sesión
               </button>

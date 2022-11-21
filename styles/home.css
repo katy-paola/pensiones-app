@@ -18,12 +18,13 @@
   background: linear-gradient(0deg, #8cfb97 0%, #d2ffdc 100%);
   min-width: 300px;
   height: 100%;
+  gap: 20px;
 }
 
 .container-home .title {
   justify-content: start;
   width: 60%;
-  margin: auto;
+  margin: 0 auto 0;
 }
 
 .container-home .title h1 {
@@ -35,7 +36,7 @@
 .content-home {
   justify-content: space-between;
   width: 60%;
-  margin: auto;
+  margin: 0 auto 0;
   gap: 40px;
 }
 

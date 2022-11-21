@@ -8,6 +8,7 @@ import '../styles/home.css';
 import '../styles/add-pension.css';
 import '../styles/edit-pension.css';
 import '../styles/view-pension.css';
+import '../styles/content-profile.css';
 import 'leaflet/dist/leaflet.css';
 import { AuthContextProvider } from '../context/authContext';
 

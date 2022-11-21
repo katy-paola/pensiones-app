@@ -3,9 +3,11 @@ import FormRegister from './FormRegister';
 import FormAddPension from './FormAddPension';
 import FormEditPension from './FormEditPension';
 import { useRouter } from 'next/router';
+import ContentProfile from './ContentProfile';
 
 const Content = () => {
   const router = useRouter();
+
   return (
     <main className="content">
       {router.pathname === '/register' && <FormRegister></FormRegister>}
@@ -14,6 +16,7 @@ const Content = () => {
       {router.pathname === '/edit-pension' && (
         <FormEditPension></FormEditPension>
       )}
+      {router.pathname === '/perfil' && <ContentProfile></ContentProfile>}
     </main>
   );
 };

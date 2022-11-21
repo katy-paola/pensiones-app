@@ -6,7 +6,7 @@ import Link from 'next/link';
 
 const Header = () => {
   const router = useRouter();
-  const { rol } = useAuthState();
+  const { rol, logout } = useAuthState();
   const { status } = useSession();
 
   const isAuth = status === 'authenticated';
@@ -35,7 +35,7 @@ const Header = () => {
                   </div>
                 )}
                 <div className="d-flex item">
-                  <Link href="#">
+                  <Link href="/perfil">
                     <a>Mi perfil</a>
                   </Link>
                 </div>
@@ -47,7 +47,10 @@ const Header = () => {
             <div className="d-flex div-btn-lg-sup">
               {isAuth ? (
                 <>
-                  <button className="btn-sm d-none d-md-block btn-lg-sup">
+                  <button
+                    onClick={logout}
+                    className="btn-sm d-none d-md-block btn-lg-sup"
+                  >
                     Cerrar sesión
                   </button>
                   <button className="d-md-none div-icon-lg">

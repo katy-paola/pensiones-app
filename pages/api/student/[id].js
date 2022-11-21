@@ -14,5 +14,19 @@ export default async function handler(req, res) {
     },
   });
 
-  res.status(200).json(student);
+  if (!student) {
+    const newStudent = await prisma.student.create({
+      data: {
+        user: {
+          connect: {
+            id,
+          },
+        },
+      },
+    });
+
+    return res.status(200).json(newStudent);
+  }
+
+  return res.status(200).json(student);
 }

@@ -1,5 +1,5 @@
 export const ROL = {
-  STUDENT: 'student',
-  HOMEOWNER: 'homeowner',
+  STUDENT: 'STUDENT',
+  HOMEOWNER: 'HOMEOWNER',
   ADMIN: 'admin',
 };

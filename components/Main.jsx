@@ -19,6 +19,7 @@ const Main = () => {
             type="button"
             className="btn btn-sm"
             onClick={() => {
+              setRol(ROL.STUDENT);
               router.push('/login');
             }}
           >
