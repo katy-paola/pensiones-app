@@ -62,6 +62,7 @@ export const authOptions = {
     signIn: '/login',
     error: '/api/auth/error',
   },
+  secret: process.env.AUTH_SECRET,
 };
 
 export default NextAuth(authOptions);

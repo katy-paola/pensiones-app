@@ -78,9 +78,9 @@ export const AuthContextProvider = ({ children }) => {
 
   const logout = () => {
     localStorage.removeItem('pensiones-app-rol');
-    signOut();
+    signOut({ callbackUrl: '/login' });
     setRol(null);
-    router.push('/login');
+    // router.push('/login');
   };
 
   return (

@@ -23,7 +23,7 @@ const Header = () => {
             </h1>
           </a>
         </Link>
-        <div className="d-flex prueba">
+        <div className="d-flex nav-menu">
           {isAuth && (
             <div className="d-flex navbar">
               <div className="menu">
@@ -43,17 +43,79 @@ const Header = () => {
             </div>
           )}
           {(router.pathname === '/register' || isAuth) && (
-            // tengo que validar si muestra el botón de inicio de sesión o cerrar sesión
+            // Validar si muestra el botón de inicio de sesión o cerrar sesión
             <div className="d-flex div-btn-lg-sup">
               {isAuth ? (
                 <>
                   <button
-                    onClick={logout}
+                    class="btn btn-primary"
+                    type="button"
+                    data-bs-toggle="offcanvas"
+                    data-bs-target="#offcanvasRight"
+                    aria-controls="offcanvasRight"
+                  >
+                    <i class="bi bi-list"></i>
+                  </button>
+
+                  <div
+                    class="offcanvas offcanvas-end"
+                    tabindex="-1"
+                    id="offcanvasRight"
+                    aria-labelledby="offcanvasRightLabel"
+                  >
+                    <div class="offcanvas-header">
+                      <button
+                        type="button"
+                        class="btn-close"
+                        data-bs-dismiss="offcanvas"
+                        aria-label="Close"
+                      ></button>
+                    </div>
+                    {!isStudent && (
+                      <div class="offcanvas-body">
+                        <button>Agregar pensión</button>
+                      </div>
+                    )}
+                    <div class="offcanvas-body">
+                      <button>Mi perfil</button>
+                    </div>
+                    <div class="offcanvas-body">
+                      <button
+                        onClick={() => {
+                          router.push('/');
+                          logout();
+                        }}
+                        className="btn-sm d-none d-md-block btn-lg-sup"
+                      >
+                        Cerrar sesión
+                      </button>
+                      <button
+                        onClick={() => {
+                          router.push('/');
+                          logout();
+                        }}
+                        className="d-md-none div-icon-lg"
+                      >
+                        <i class="bi bi-box-arrow-right icon-lg"></i>
+                      </button>
+                    </div>
+                  </div>
+                  <button
+                    onClick={() => {
+                      router.push('/');
+                      logout();
+                    }}
                     className="btn-sm d-none d-md-block btn-lg-sup"
                   >
                     Cerrar sesión
                   </button>
-                  <button className="d-md-none div-icon-lg">
+                  <button
+                    onClick={() => {
+                      router.push('/');
+                      logout();
+                    }}
+                    className="d-md-none div-icon-lg"
+                  >
                     <i class="bi bi-box-arrow-right icon-lg"></i>
                   </button>
                 </>

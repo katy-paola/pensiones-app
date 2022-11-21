@@ -41,6 +41,13 @@ header .pensiones-app h1 {
   margin: 0;
 }
 
+header .nav-menu a {
+  text-decoration: none;
+  color: #386b43;
+  margin: 0 10px;
+  font-weight: bold;
+}
+
 header .div-btn-lg-sup {
   display: flex;
 }
