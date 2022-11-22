@@ -83,20 +83,13 @@ const Header = () => {
                           Mi perfil
                         </button>
                       </div>
-                      <button
-                        onClick={() => {
-                          logout();
-                        }}
-                        className="btn-sm btn-lg-sup"
-                      >
+                      <button onClick={logout} className="btn-sm btn-lg-sup">
                         Cerrar sesión
                       </button>
                     </div>
                   </div>
                   <button
-                    onClick={() => {
-                      logout();
-                    }}
+                    onClick={logout}
                     className="btn-sm d-none d-md-block btn-lg-sup"
                   >
                     Cerrar sesión
