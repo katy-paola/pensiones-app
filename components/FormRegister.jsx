@@ -96,8 +96,6 @@ const FormRegister = () => {
                   />
                 )}
               </div>
-            </div>
-            <div className="d-flex datos-2">
               <div className="d-flex input">
                 <input
                   type="password"
@@ -105,6 +103,8 @@ const FormRegister = () => {
                   name="password"
                 />
               </div>
+            </div>
+            <div className="d-flex datos-2">
               <div className="d-flex input">
                 <input
                   type="password"
@@ -119,11 +119,11 @@ const FormRegister = () => {
               {rol === ROL.HOMEOWNER && (
                 <>
                   <div className="d-flex input">
-                    <input type="text" placeholder="Direccion" name="address" />
+                    <input type="text" placeholder="Dirección" name="address" />
                   </div>
 
                   <div className="d-flex input">
-                    <input type="tel" placeholder="Telefono" name="phone" />
+                    <input type="tel" placeholder="Teléfono" name="phone" />
                   </div>
                 </>
               )}
