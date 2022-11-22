@@ -96,15 +96,26 @@ const FormRegister = () => {
                   />
                 )}
               </div>
-              <div className="d-flex input">
-                <input
-                  type="password"
-                  placeholder="Contraseña"
-                  name="password"
-                />
-              </div>
+              {!isStudent && (
+                <div className="d-flex input">
+                  <input
+                    type="password"
+                    placeholder="Contraseña"
+                    name="password"
+                  />
+                </div>
+              )}
             </div>
             <div className="d-flex datos-2">
+              {isStudent && (
+                <div className="d-flex input">
+                  <input
+                    type="password"
+                    placeholder="Contraseña"
+                    name="password"
+                  />
+                </div>
+              )}
               <div className="d-flex input">
                 <input
                   type="password"
