@@ -14,9 +14,22 @@ export const useAuthState = () => {
   return context;
 };
 
+const DEFAULT_USER = {
+  id: '',
+  name: '',
+  lastName: '',
+  email: '',
+  emailVerified: null,
+  password: '',
+  image: '',
+  rol: 'STUDENT',
+  homeOwner: '',
+  student: '',
+};
+
 export const AuthContextProvider = ({ children }) => {
   const [rol, setRol] = useState(null);
-  const [user, setUser] = useState(null);
+  const [user, setUser] = useState(DEFAULT_USER);
   // const router = useRouter();
   const { data: session, status } = useSession();
 

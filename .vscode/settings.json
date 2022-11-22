@@ -9,6 +9,6 @@
   },
   "cSpell.words": ["prismadb"],
   "[javascript]": {
-    "editor.defaultFormatter": "ms-vsliveshare.vsliveshare"
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   }
 }
