@@ -1,10 +1,14 @@
-import MapPension from './mapPension';
 import { useState, useEffect } from 'react';
 import { useSession } from 'next-auth/react';
 import { useRouter } from 'next/router';
 import { useAuthState } from '../context/authContext';
 import { ROL } from '../model/rol.enum';
 import ReactStars from 'react-rating-stars-component';
+
+import dynamic from 'next/dynamic';
+const MapPension = dynamic(() => import('./mapPension'), {
+  ssr: false,
+});
 
 const CardPension = ({
   image,
@@ -23,6 +27,13 @@ const CardPension = ({
   const [isFavorite, setIsFavorite] = useState(false);
   const { data: session } = useSession();
   const { rol } = useAuthState();
+  const [isWindow, setIsWindow] = useState(false);
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      setIsWindow(true);
+    }
+  }, []);
 
   const [newReview, setNewReview] = useState({
     title: '',
@@ -90,7 +101,7 @@ const CardPension = ({
       }),
     });
     if (res.status === 200) {
-      alert('Gracias por tu calificación');
+      alert('Gracias por tu calificacion');
       setNewReview({
         title: '',
         description: '',
@@ -129,7 +140,7 @@ const CardPension = ({
       }),
     });
     if (res.status === 200) {
-      alert('Pensión eliminada');
+      alert('Pension eliminada');
       router.push('/home');
     }
   };
@@ -266,7 +277,7 @@ const CardPension = ({
           </div>
         )}
       </div>
-      {showMap && (
+      {isWindow && showMap && (
         <div className="map">
           <MapPension
             pensions={[
