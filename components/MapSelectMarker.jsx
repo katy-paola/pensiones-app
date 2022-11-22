@@ -1,5 +1,12 @@
 import { useMemo } from 'react';
 import { MapContainer, TileLayer, Marker } from 'react-leaflet';
+import L from 'leaflet';
+
+function createIcon(url) {
+  return new L.Icon({
+    iconUrl: url,
+  });
+}
 
 const MapSelectMarker = ({ setMap, positionMarker }) => {
   const getLatitudeAndLongitudeFromString = (string) => {
@@ -11,7 +18,7 @@ const MapSelectMarker = ({ setMap, positionMarker }) => {
   const displayMap = useMemo(
     () => (
       <MapContainer
-        style={{ height: '100vh', width: '100%' }}
+        style={{ width: '100%', height: '100%' }}
         center={[10.4002813, -75.5435449]}
         zoom={13}
         scrollWheelZoom={false}
@@ -28,6 +35,7 @@ const MapSelectMarker = ({ setMap, positionMarker }) => {
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
         <Marker
+          icon={createIcon('/house-fill.svg')}
           position={getLatitudeAndLongitudeFromString(positionMarker)}
         ></Marker>
       </MapContainer>
@@ -35,7 +43,7 @@ const MapSelectMarker = ({ setMap, positionMarker }) => {
     [positionMarker, setMap]
   );
 
-  return <div style={{ height: '100vh', width: '100%' }}>{displayMap}</div>;
+  return <div style={{ height: '100%', width: '100%' }}>{displayMap}</div>;
 };
 
 export default MapSelectMarker;

@@ -1,7 +1,7 @@
 import { createContext, useState, useContext, useEffect } from 'react';
 import { signIn, useSession, signOut } from 'next-auth/react';
-import { ROL } from '../model/rol.enum';
-import { useRouter } from 'next/router';
+// import { ROL } from '../model/rol.enum';
+// import { useRouter } from 'next/router';
 
 const AuthContext = createContext();
 
@@ -17,7 +17,7 @@ export const useAuthState = () => {
 export const AuthContextProvider = ({ children }) => {
   const [rol, setRol] = useState(null);
   const [user, setUser] = useState(null);
-  const router = useRouter();
+  // const router = useRouter();
   const { data: session, status } = useSession();
 
   const getAllUserData = async (id) => {
@@ -26,26 +26,26 @@ export const AuthContextProvider = ({ children }) => {
     setUser(data);
     setRol(data.rol);
 
-    if (rol === ROL.STUDENT) {
-      const studentData = await fetch(`/api/student/${id}`);
-      const student = await studentData.json();
-      console.log(
-        '🚀 ~ file: authContext.jsx ~ line 32 ~ getAllUserData ~ student',
-        student
-      );
+    // if (rol === ROL.STUDENT) {
+    //   const studentData = await fetch(`/api/student/${id}`);
+    //   const student = await studentData.json();
+    //   console.log(
+    //     '🚀 ~ file: authContext.jsx ~ line 32 ~ getAllUserData ~ student',
+    //     student
+    //   );
 
-      setUser({ ...data, student });
-    }
+    //   setUser({ ...data, student });
+    // }
 
-    if (rol === ROL.HOMEOWNER) {
-      const homeownerData = await fetch(`/api/home-owner/${id}`);
-      const homeowner = await homeownerData.json();
-      setUser({ ...data, homeowner });
-      if (!homeowner) {
-        router.push('/auth/new-user');
-        console.log('no tiene datos este homeowner');
-      }
-    }
+    // if (rol === ROL.HOMEOWNER) {
+    //   const homeownerData = await fetch(`/api/home-owner/${id}`);
+    //   const homeowner = await homeownerData.json();
+    //   setUser({ ...data, homeowner });
+    //   if (!homeowner) {
+    //     router.push('/auth/new-user');
+    //     console.log('no tiene datos este homeowner');
+    //   }
+    // }
   };
 
   const updateRolUser = async (id, rol) => {
@@ -84,7 +84,7 @@ export const AuthContextProvider = ({ children }) => {
   };
 
   return (
-    <AuthContext.Provider value={{ rol, user, setRol, login, logout }}>
+    <AuthContext.Provider value={{ rol, user, setUser, setRol, login, logout }}>
       {children}
     </AuthContext.Provider>
   );

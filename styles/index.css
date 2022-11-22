@@ -41,6 +41,10 @@ header .pensiones-app h1 {
   margin: 0;
 }
 
+header .nav-menu {
+  gap: 20px;
+}
+
 header .nav-menu a {
   text-decoration: none;
   color: #386b43;
@@ -48,8 +52,13 @@ header .nav-menu a {
   font-weight: bold;
 }
 
+header .nav-menu .navbar .menu {
+  flex-direction: row;
+}
+
 header .div-btn-lg-sup {
   display: flex;
+  align-items: center;
 }
 
 header .btn-lg-sup {
@@ -58,7 +67,8 @@ header .btn-lg-sup {
   border: none;
   font-size: 14px;
   border-radius: 5px;
-  padding: 3px 6px;
+  padding-bottom: 3px;
+  height: min-content;
 }
 
 header .div-btn-lg-sup .div-icon-lg {
@@ -66,7 +76,12 @@ header .div-btn-lg-sup .div-icon-lg {
   background: transparent;
 }
 
-header .div-btn-lg-sup .div-icon-lg .icon-lg {
+header .btn-menu-responsive {
+  padding: 0;
+}
+
+header .div-btn-lg-sup .div-icon-lg .icon-lg,
+.icon-menu-responsive {
   margin: 0;
   font-size: 2rem;
   color: #386b43;
@@ -242,6 +257,10 @@ footer p i {
   header h1 i {
     font-size: 20px;
   }
+  header .icon-menu-responsive {
+    font-size: 16px;
+    font-weight: bold;
+  }
   main {
     justify-content: space-evenly;
     gap: 10px;
@@ -262,7 +281,8 @@ footer p i {
   header h1 i {
     font-size: 16px;
   }
-  header .div-btn-lg-sup .div-icon-lg .icon-lg {
+  header .div-btn-lg-sup .div-icon-lg .icon-lg,
+  icon-menu-responsive {
     font-size: 0.9rem;
   }
 }

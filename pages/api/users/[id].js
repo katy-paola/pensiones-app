@@ -9,6 +9,10 @@ export default async function handler(req, res) {
     where: {
       id,
     },
+    include: {
+      homeOwner: true,
+      student: true,
+    },
   });
   res.status(200).json(user);
 }

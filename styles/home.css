@@ -82,6 +82,23 @@
   width: 100%;
 }
 
+.div--search {
+  width: 60%;
+  justify-content: center;
+  margin: 0 auto;
+  gap: 10px;
+}
+
+input[type='search'] {
+  margin: 0 auto;
+  width: 100%;
+  height: 40px;
+  border: 1px solid #386b43;
+  border-radius: 5px;
+  padding: 0 10px;
+  outline: none;
+}
+
 @media (max-width: 950px) {
   .container-home .title,
   .content-home {
@@ -107,6 +124,9 @@
 }
 
 @media (max-width: 670px) {
+  .div--search {
+    width: 100%;
+  }
   .row-pension {
     flex-direction: column;
     gap: 10px;

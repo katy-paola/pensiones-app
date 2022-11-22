@@ -25,11 +25,11 @@ const Header = () => {
         </Link>
         <div className="d-flex nav-menu">
           {isAuth && (
-            <div className="d-flex navbar">
-              <div className="menu">
+            <div className="d-flex navbar d-none d-md-block">
+              <div className="d-flex menu">
                 {!isStudent && (
                   <div className="d-flex item">
-                    <Link href="#">
+                    <Link href="/add-pension">
                       <a>Agregar pensión</a>
                     </Link>
                   </div>
@@ -48,75 +48,52 @@ const Header = () => {
               {isAuth ? (
                 <>
                   <button
-                    class="btn btn-primary"
+                    className="btn btn-sm d-md-none btn-menu-responsive"
                     type="button"
                     data-bs-toggle="offcanvas"
                     data-bs-target="#offcanvasRight"
                     aria-controls="offcanvasRight"
                   >
-                    <i class="bi bi-list"></i>
+                    <i className="bi bi-list icon-menu-responsive"></i>
                   </button>
 
                   <div
-                    class="offcanvas offcanvas-end"
-                    tabindex="-1"
+                    className="offcanvas offcanvas-end d-flex menu-responsive"
+                    tabIndex="-1"
                     id="offcanvasRight"
                     aria-labelledby="offcanvasRightLabel"
                   >
-                    <div class="offcanvas-header">
+                    <div className="offcanvas-header">
                       <button
                         type="button"
-                        class="btn-close"
+                        className="btn-close"
                         data-bs-dismiss="offcanvas"
                         aria-label="Close"
                       ></button>
                     </div>
-                    {!isStudent && (
-                      <div class="offcanvas-body">
-                        <button>Agregar pensión</button>
+
+                    <div className="offcanvas-body flex-column d-flex justify-content-between">
+                      <div className="d-flex flex-column gap-2">
+                        {!isStudent && <button>Agregar pensión</button>}
+                        <button>Mi perfil</button>
                       </div>
-                    )}
-                    <div class="offcanvas-body">
-                      <button>Mi perfil</button>
-                    </div>
-                    <div class="offcanvas-body">
                       <button
                         onClick={() => {
-                          router.push('/');
                           logout();
                         }}
-                        className="btn-sm d-none d-md-block btn-lg-sup"
+                        className="btn-sm btn-lg-sup"
                       >
                         Cerrar sesión
-                      </button>
-                      <button
-                        onClick={() => {
-                          router.push('/');
-                          logout();
-                        }}
-                        className="d-md-none div-icon-lg"
-                      >
-                        <i class="bi bi-box-arrow-right icon-lg"></i>
                       </button>
                     </div>
                   </div>
                   <button
                     onClick={() => {
-                      router.push('/');
                       logout();
                     }}
                     className="btn-sm d-none d-md-block btn-lg-sup"
                   >
                     Cerrar sesión
-                  </button>
-                  <button
-                    onClick={() => {
-                      router.push('/');
-                      logout();
-                    }}
-                    className="d-md-none div-icon-lg"
-                  >
-                    <i class="bi bi-box-arrow-right icon-lg"></i>
                   </button>
                 </>
               ) : (
@@ -130,7 +107,7 @@ const Header = () => {
                     Iniciar sesión
                   </button>
                   <button className="d-md-none div-icon-lg">
-                    <i class="bi bi-box-arrow-in-right icon-lg"></i>
+                    <i className="bi bi-box-arrow-in-right icon-lg"></i>
                   </button>
                 </>
               )}

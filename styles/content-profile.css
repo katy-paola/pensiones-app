@@ -4,12 +4,6 @@
   grid-template-rows: 65px 1fr 65px;
   min-height: 100vh;
 }
-.grid-container-profile {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 65px 1fr 65px;
-  min-height: 100vh;
-}
 
 .container-profile {
   width: 30%;
@@ -18,6 +12,7 @@
   outline: 1px solid rgba(56, 107, 67, 0.5);
   background: #8cfb97;
   padding: 30px;
+  margin: 30px auto;
 }
 
 .container-profile,
@@ -29,7 +24,7 @@
 }
 
 .container-profile .photo {
-  width: 20%;
+  width: 40%;
   height: auto;
 }
 
@@ -49,8 +44,24 @@
   font-size: 16px;
 }
 
+.container-profile .icon-edit-profile a {
+  color: #386b43;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  gap: 5px;
+}
+
+.container-profile .icon-edit-profile a i {
+  font-size: 16px;
+}
+
 .content-profile .items .role p {
   font-size: 12px;
+}
+
+.content-profile .items .ver-fav {
+  text-decoration: underline;
 }
 
 .content-profile .items .phone {

@@ -1,5 +1,12 @@
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import Link from 'next/link';
+import L from 'leaflet';
+
+function createIcon(url) {
+  return new L.Icon({
+    iconUrl: url,
+  });
+}
 
 const MapPension = ({ pensions }) => {
   console.log(pensions);
@@ -29,6 +36,7 @@ const MapPension = ({ pensions }) => {
       />
       {pensions.map((pension) => (
         <Marker
+          icon={createIcon('/house-fill.svg')}
           key={pension.id}
           position={getLatitudeAndLongitudeFromString(pension.location)}
         >

@@ -5,6 +5,13 @@ import { ROL } from '../model/rol.enum';
 import { useSession } from 'next-auth/react';
 import ReactStars from 'react-rating-stars-component';
 
+export const getMoneyFormat = (number) => {
+  return new Intl.NumberFormat('es-ES', {
+    style: 'currency',
+    currency: 'COP',
+  }).format(number);
+};
+
 const ContainerHome = () => {
   const [pensions, setPensions] = useState([]);
   const [filter, setFilter] = useState('');
@@ -60,21 +67,27 @@ const ContainerHome = () => {
         </div>
 
         {isStudent && (
-          <div className="d-flex search">
+          <div className="d-flex flex-column div--search">
             <input
               type="search"
-              placeholder="Buscar"
+              placeholder="Filtrar por nombre, dirección o servicios"
+              className="form-control"
               value={filter}
               onChange={(e) => setFilter(e.target.value)}
             />
 
-            <input
-              type="range"
-              min={50000}
-              max="1000000"
-              onInput={handleInput}
-            />
-            <h1>Precio máximo: {price}</h1>
+            <div className="d-flex flex-row gap-2">
+              <label htmlFor="price">
+                Precio máximo: {getMoneyFormat(price)}
+              </label>
+
+              <input
+                type="range"
+                min={50000}
+                max="1000000"
+                onInput={handleInput}
+              />
+            </div>
           </div>
         )}
         {/* me falta agregarle la parte de filtrar búsqueda */}
@@ -115,7 +128,9 @@ const ContainerHome = () => {
                       <div className="info-pension">
                         {getPromReview(pension.reviews)}
                       </div>
-                      <div className="info-pension">${pension.price}</div>
+                      <div className="info-pension">
+                        {getMoneyFormat(pension.price)}
+                      </div>
                       <div className="info-pension">🛌 🍽</div>
                     </div>
                   </div>
@@ -150,7 +165,9 @@ const ContainerHome = () => {
                       <div className="info-pension">
                         {getPromReview(pension.reviews)}
                       </div>
-                      <div className="info-pension">${pension.price}</div>
+                      <div className="info-pension">
+                        {getMoneyFormat(pension.price)}
+                      </div>
                       <div className="info-pension">🛌 🍽</div>
                     </div>
                   </div>
@@ -159,7 +176,7 @@ const ContainerHome = () => {
           )}
           <div className="d-flex icon-map">
             <Link href="view-map">
-              <i class="bi bi-geo-alt-fill"></i>
+              <i className="bi bi-geo-alt-fill"></i>
             </Link>
           </div>
         </div>

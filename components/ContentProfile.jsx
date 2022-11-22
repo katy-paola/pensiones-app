@@ -1,6 +1,7 @@
 import { useAuthState } from '../context/authContext';
 import { ROL } from '../model/rol.enum';
 import { useState, useEffect } from 'react';
+import Link from 'next/link';
 
 const ContentProfile = () => {
   const { user, rol } = useAuthState();
@@ -36,6 +37,14 @@ const ContentProfile = () => {
         </picture>
       </div>
       <div className="d-flex content-profile">
+        <div className="d-flex items icon-edit-profile">
+          <Link href="/edit-profile">
+            <a className="d-flex">
+              <p>Editar perfil</p>
+              <i className="bi bi-pencil-square"></i>
+            </a>
+          </Link>
+        </div>
         <div className="d-flex items item-1">
           <div className="name">
             <p>
@@ -49,11 +58,11 @@ const ContentProfile = () => {
         <div className="items">
           <p>{user.email}</p>
         </div>
-        <div className="items">
-          <p>⭐⭐⭐⭐⭐</p>
-        </div>
         {rol === ROL.HOMEOWNER ? (
           <>
+            <div className="items">
+              <p>{user?.homeOwner?.address}</p>
+            </div>
             <div className="items">
               <a href={`tel:${user?.homeOwner?.phone}`} className="phone">
                 Contactar
@@ -63,7 +72,10 @@ const ContentProfile = () => {
         ) : (
           <>
             <div className="items">
-              <a onClick={() => setShowPensions(!showPensions)}>
+              <a
+                className="ver-fav"
+                onClick={() => setShowPensions(!showPensions)}
+              >
                 Ver mis pensiones guardadas
               </a>
             </div>

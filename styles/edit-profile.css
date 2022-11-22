@@ -1,0 +1,86 @@
+.grid-container-edit-profile {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 65px 1fr 65px;
+  min-height: 100vh;
+}
+
+.container-edit-profile {
+  width: 50%;
+  min-width: 300px;
+  height: auto;
+  background: #f1fff9;
+  border-radius: 10px;
+  margin: 60px auto;
+  justify-content: center;
+  padding: 20px 50px;
+}
+
+.container-edit-profile,
+.container-edit-profile form,
+.container-edit-profile form .content-form,
+.container-edit-profile form .content-form .data {
+  flex-direction: column;
+}
+
+.container-edit-profile,
+.container-edit-profile form {
+  gap: 20px;
+}
+
+.container-edit-profile form .content-form {
+  gap: 30px;
+}
+
+.container-edit-profile .title {
+  justify-content: center;
+  padding: 30px;
+}
+
+.container-edit-profile .title h1 {
+  color: #386b43;
+  font-size: 25px;
+  margin: 0;
+}
+
+.container-edit-profile form .content-form .data input {
+  border: none;
+  background: #c0eac9;
+}
+
+.container-edit-profile form .save {
+  justify-content: center;
+  padding: 30px;
+}
+
+.container-edit-profile form .save button {
+  background: #386b43;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+}
+
+@media (max-width: 900px) {
+  .container-edit-profile {
+    width: 60%;
+    margin: 50px auto;
+  }
+}
+
+@media (max-width: 750px) {
+  .container-edit-profile {
+    width: 70%;
+  }
+}
+
+@media (max-width: 600px) {
+  .container-edit-profile {
+    width: 80%;
+  }
+}
+
+@media (max-width: 450px) {
+  .container-edit-profile {
+    width: 90%;
+  }
+}

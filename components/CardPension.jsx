@@ -164,10 +164,10 @@ const CardPension = ({
                   router.push('/edit-pension');
                 }}
               >
-                <i class="bi bi-pencil-square"></i>
+                <i className="bi bi-pencil-square"></i>
               </a>
               <a className="icon-3" onClick={deletePension}>
-                <i class="bi bi-trash"></i>
+                <i className="bi bi-trash"></i>
               </a>
             </>
           )}
@@ -260,14 +260,14 @@ const CardPension = ({
                 value={newReview.description}
               ></textarea>
               <a onClick={createReview}>
-                <i title="Publicar reseña" class="bi bi-check-circle"></i>
+                <i title="Publicar reseña" className="bi bi-check-circle"></i>
               </a>
             </div>
           </div>
         )}
       </div>
       {showMap && (
-        <div class="map">
+        <div className="map">
           <MapPension
             pensions={[
               { id: 1, location: location ?? '10.401630,-75.470022', name },
