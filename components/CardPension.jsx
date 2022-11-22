@@ -90,7 +90,7 @@ const CardPension = ({
       }),
     });
     if (res.status === 200) {
-      alert('Gracias por tu calificacion');
+      alert('Gracias por tu calificación');
       setNewReview({
         title: '',
         description: '',
@@ -129,7 +129,7 @@ const CardPension = ({
       }),
     });
     if (res.status === 200) {
-      alert('Pension eliminada');
+      alert('Pensión eliminada');
       router.push('/home');
     }
   };

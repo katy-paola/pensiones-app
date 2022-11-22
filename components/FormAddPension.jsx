@@ -48,7 +48,7 @@ const FormAddPension = () => {
     });
 
     if (res) {
-      alert('Pension creada con exito');
+      alert('Pensión creada con éxito');
       router.push('/home');
     }
   };
