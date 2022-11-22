@@ -74,8 +74,14 @@ const Header = () => {
 
                     <div className="offcanvas-body flex-column d-flex justify-content-between">
                       <div className="d-flex flex-column gap-2">
-                        {!isStudent && <button>Agregar pensión</button>}
-                        <button>Mi perfil</button>
+                        {!isStudent && (
+                          <button onClick={() => router.push('/add-pension')}>
+                            Agregar pensión
+                          </button>
+                        )}
+                        <button onClick={() => router.push('/perfil')}>
+                          Mi perfil
+                        </button>
                       </div>
                       <button
                         onClick={() => {

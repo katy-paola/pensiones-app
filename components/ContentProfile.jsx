@@ -31,7 +31,7 @@ const ContentProfile = () => {
 
   return (
     <div className="d-flex container-profile">
-      <div className="photo">
+      <div className="photo-profile">
         <picture>
           <img src={user.image} alt="" className="img-fluid" />
         </picture>
